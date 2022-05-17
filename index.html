@@ -9,13 +9,14 @@
 </head>
 <body>
     <div class="container" id="sign__in">
-        <form action="" method="post" class="form">
+        <form action="" method="post" class="form signIn__form">
             <h3 class="form__title">Sign in</h3>
             <p class = form__subtitle>Email address</p>
-            <div id="signInError"></div>
             <input  type="email" class="form__input" id="signInEmail" required>
             <p class = form__subtitle>Password</p>
             <input type="password" class="form__input" required>
+
+            <div id="signInError"></div>
 
             <button type="submit" class="form__button">Sign in</button>
         </form>
@@ -28,14 +29,16 @@
         <form action = "" method="post" class="form reg__form">
             <h3 class="form__title">Create your account</h3>
             <p class = form__subtitle>Email address</p>
-            <div id="signUpError"></div>
             <input type="email" class="form__input" id="signUpEmail" required>
             <p class = form__subtitle>Password</p>
             <input type="password" id="signUpPassword" class="form__input" required>
             <p>Confirm password</p>
             <input type="password" id="signUpPasswordConfirm" class="form__input" required>
 
+            <div id="signUpError"></div>
+
             <button type="submit" class="form__button">Sign up</button>
+            
         </form>
     </div>
     

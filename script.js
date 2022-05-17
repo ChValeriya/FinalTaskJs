@@ -1,37 +1,44 @@
 const signInEmail = document.querySelector('#signInEmail');
-
-signInEmail.onblur = () => {
-  if (!signInEmail.value.includes('@')) {
-    signInEmail.classList.add('invalid');
-    signInError.innerHTML = 'Пожалуйста, введите правильный email.'
-  }
-};
-signInEmail.onfocus = () => {
-  if (signInEmail.classList.contains('invalid')) {
-    signInEmail.classList.remove('invalid');
-    signInError.innerHTML = "";
-  }
-};
-
 const signUpEmail = document.querySelector('#signUpEmail');
 
-signUpEmail.onblur = () => {
-  if (!signUpEmail.value.includes('@')) {
-    signUpEmail.classList.add('invalid');
-    signUpError.innerHTML = 'Пожалуйста, введите правильный email.'
+let a = (email, error) => {
+  email.onblur = () => {
+    if (!email.value.includes('@')) {
+      email.classList.add('invalid');
+      error.innerHTML = 'Пожалуйста, введите правильный email.'
+    }
   }
-};
-signUpEmail.onfocus = () => {
-  if (signUpEmail.classList.contains('invalid')) {
-    signUpEmail.classList.remove('invalid');
+  email.onfocus = () => {
+    if (email.classList.contains('invalid')) {
+      email.classList.remove('invalid');
+      error.innerHTML = "";
+    }
+  }
+}
+
+a(signInEmail, signInError);
+a(signUpEmail, signUpError);
+
+const signUpPassword = document.querySelector('#signUpPassword');
+const signUpPasswordConfirm = document.querySelector('#signUpPasswordConfirm');
+
+signUpPasswordConfirm.onblur = () => {
+  if(signUpPassword.value !== signUpPasswordConfirm.value) {
+    signUpPasswordConfirm.classList.add('invalid');
+    signUpError.innerHTML = 'Пароли не совпадают!' 
+  }
+}
+signUpPasswordConfirm.onfocus = () => {
+  if(signUpPasswordConfirm.classList.contains('invalid')) {
+    signUpPasswordConfirm.classList.remove('invalid');
     signUpError.innerHTML = "";
   }
-};
+}
 
 const regForm = document.querySelector('.reg__form');
-let arr = [];
+let registeredUsers = [];
 
 regForm.addEventListener ('submit', (event) => {
   event.preventDefault(); 
-  arr.push({[signUpEmail.value]: signUpPassword.value});
-});
+  registeredUsers.push({[signUpEmail.value]: signUpPassword.value})
+})

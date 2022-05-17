@@ -49,6 +49,7 @@
     display: block;
 }
 
-#signInEmail:invalid, #signUpEmail:invalid {
-    color: plum;
+#signUpError, #signInError {
+    margin: 0 auto;
+    font-style: italic;
 }
