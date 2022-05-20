@@ -1,3 +1,11 @@
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
 .container {
     padding: 20px;
     margin: 0 auto;
@@ -41,6 +49,10 @@
     border: 1px solid gray;
 }
 
+.form__button:active {
+    background-color: rgb(205, 246, 246);
+}
+
 #sign__up {
     display: none;
 }
@@ -52,4 +64,25 @@
 #signUpError, #signInError {
     margin: 0 auto;
     font-style: italic;
+}
+
+
+
+
+
+.menu{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu__link {
+    color: gray;
+    font-size: 50px;
+}
+
+.underline {
+    border-bottom: 2px solid gold;
 }
