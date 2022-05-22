@@ -72,17 +72,40 @@ ul {
 
 .menu{
     width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
+.menu__points {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start; 
+}
 .menu__link {
     color: gray;
-    font-size: 50px;
+    font-size: 20px;
 }
 
 .underline {
     border-bottom: 2px solid gold;
+}
+
+.main__text {
+    margin-top: 50vh;
+    text-align: center;
+    font-size: 50px;
+}
+
+.main__none {
+    display: none;
+}
+
+#main__page:target, #main__clients:target, #main__map:target {
+    display: block;
+}
+
+#device {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
 }

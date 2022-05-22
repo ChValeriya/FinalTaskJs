@@ -1,16 +1,27 @@
 const menu = document.querySelector('.menu');
-const main= document.querySelector('#main');
-main.classList.add('underline');
+const mainPoint= document.querySelector('#main');
 
-let preVal = main;
+mainPoint.classList.add('underline');
+
+let prePoint = mainPoint;
 
 menu.addEventListener ('click', (event) => {
   const target = event.target;
 
   if (target.tagName !== 'A') return;
-  if (preVal) preVal.classList.remove('underline');
-  
+  if (prePoint) prePoint.classList.remove('underline');
+
   target.classList.add('underline');
-  
-  preVal = target;
+
+  prePoint = target;
 })
+
+let device= document.querySelector('#device');
+
+const screenWidth = window.screen.width
+console.log(screenWidth)
+if (screenWidth < 768) {
+  device.innerHTML = 'Вход осуществлен с мобильного устройства.'
+} else {
+  device.innerHTML = 'Вход осуществлен с компьютера.'
+}

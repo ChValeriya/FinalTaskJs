@@ -10,12 +10,21 @@
 <body>
     <nav class="menu">
         <ul class="menu__points">
-            <li ><a class="menu__link" id="main" href="#">Главная</a></li>
-            <li ><a class="menu__link" href="#">Клиенты</a></li>
-            <li ><a class="menu__link" href="#">Карта</a></li>
-            <li ><a class="menu__link" href="#">Выход</a></li>
+            <li ><a class="menu__link" id="main" href="#main__page">Главная</a></li>
+            <li ><a class="menu__link" href="#main__clients">Клиенты</a></li>
+            <li ><a class="menu__link" href="#main__map">Карта</a></li>
+            <li ><a class="menu__link" href="./index.html">Выход</a></li>
         </ul>
     </nav>
+
+    <div id="main__block">
+        <div class="main__none" id="main__page">
+            <h1 class="main__text">Рады приветствовать Вас!</h1>
+            <p id="device"></p>
+        </div>
+        <h1 class="main__text main__none" id="main__clients">клиенты</h1>
+        <h1 class="main__text main__none" id="main__map">карта</h1>
+    </div>
 
 <script src="./main.js"></script>
 
