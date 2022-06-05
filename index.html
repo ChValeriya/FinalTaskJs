@@ -8,25 +8,8 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div class="container" id="sign__in">
-        <form action="" method="post" class="form signIn__form">
-            <h3 class="form__title">Sign in</h3>
-            <p class = form__subtitle>Email address</p>
-            <input  type="email" class="form__input" id="signInEmail" required>
-            <p class = form__subtitle>Password</p>
-            <input type="password" id="signInPassword" class="form__input" required>
-
-            <div id="signInError"></div>
-
-            <button type="submit" class="form__button"><a href="./main.html">Sign in</a></button>
-        </form>
-    </div>
-
-    <div class="container"><a href="#sign__up" class="creation">Create an account</a></div>
-
-
     <div class="container" id="sign__up">
-        <form action = "" method="post" class="form reg__form">
+        <form class="form reg__form">
             <h3 class="form__title">Create your account</h3>
             <p class = form__subtitle>Email address</p>
             <input type="email" class="form__input" id="signUpEmail" required>
@@ -37,11 +20,28 @@
 
             <div id="signUpError"></div>
 
-            <button type="submit" class="form__button">Sign up</button>
+            <button class="form__button">Sign up</button>
             
         </form>
     </div>
     
+
+    <div class="container" id="sign__in">
+        <form class="form signIn__form">
+            <h3 class="form__title">Sign in</h3>
+            <p class = form__subtitle>Email address</p>
+            <input  type="email" class="form__input" id="signInEmail" required>
+            <p class = form__subtitle>Password</p>
+            <input type="password" id="signInPassword" class="form__input" required>
+
+            <div id="signInError"></div>
+
+            <button class="form__button" id="signInBtn">Sign in</button>
+        </form>
+
+        <div class="container"><a href="#sign__up" class="creation">Create an account</a></div>
+    </div>
+
     <script src="./script.js"></script>
 </body>
     

@@ -1,5 +1,11 @@
 const signInEmail = document.querySelector('#signInEmail');
 const signUpEmail = document.querySelector('#signUpEmail');
+const signUpPassword = document.querySelector('#signUpPassword');
+const signInPassword = document.querySelector('#signInPassword');
+const signInError = document.querySelector('#signInError');
+const signUpError = document.querySelector('#signUpError');
+const signInBtn = document.querySelector('#signInBtn');
+const signUpBtn = document.querySelector('#signUpBtn');
 
 let enterEmail = (email, error) => {
   email.onblur = () => {
@@ -19,7 +25,6 @@ let enterEmail = (email, error) => {
 enterEmail(signInEmail, signInError);
 enterEmail(signUpEmail, signUpError);
 
-const signUpPassword = document.querySelector('#signUpPassword');
 const signUpPasswordConfirm = document.querySelector('#signUpPasswordConfirm');
 
 signUpPasswordConfirm.onblur = () => {
@@ -36,29 +41,30 @@ signUpPasswordConfirm.onfocus = () => {
 }
 
 const regForm = document.querySelector('.reg__form');
-let registeredUsers = [];
 
-regForm.addEventListener ('submit', (event) => {
-  event.preventDefault(); 
-  if(!registeredUsers.includes(`email: ${signUpEmail.value} password: ${signUpPassword.value}`)) {
-    registeredUsers.push(`email: ${signUpEmail.value} password: ${signUpPassword.value}`);
+regForm.addEventListener ('click', (event) => {
+  if (event.target.tagName !== 'BUTTON') return;
+  if(signUpPassword.value !== signUpPasswordConfirm.value) return;
+  if(signUpPassword.value === localStorage.getItem(signUpEmail.value)) {
+    signUpError.innerHTML = 'Пользователь уже существует.';
+    return
   }
-})
-
-const signInPassword = document.querySelector('#signInPassword');
-const signInForm = document.querySelector('.signIn__form');
-
-signInEmail.value = localStorage.getItem('signInEmail');
-signInPassword.value = localStorage.getItem('signInPassword');
-
-signInForm.addEventListener ('submit', (event) => {
-  event.preventDefault();
-  if(registeredUsers.includes(`email: ${signInEmail.value} password: ${signInPassword.value}`)) {
-    localStorage.setItem(signInEmail.value, signInPassword.value)
-  } else {
-    signInError.innerHTML = 'Пользователь не существует.'
+  if(signUpEmail.value !== '' && signUpPassword.value !== '') {
+    localStorage.setItem(signUpEmail.value, signUpPassword.value);
+    regForm.setAttribute('action', './main.html?#main__page');
   }
 })
 // localStorage.clear()
-console.log(registeredUsers)
-console.log(localStorage)
+
+const signInForm = document.querySelector('.signIn__form');
+
+signInForm.addEventListener ('click', (event) => {
+  if (event.target.tagName !== 'BUTTON') return;
+
+  if(signInPassword.value !== localStorage.getItem(signInEmail.value)) {
+    signInError.innerHTML = 'Пользователь не существует.'
+    return
+  } else {
+    signInForm.setAttribute('action', './main.html?#main__page');
+  }
+})

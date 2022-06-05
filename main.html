@@ -22,8 +22,37 @@
             <h1 class="main__text">Рады приветствовать Вас!</h1>
             <p id="device"></p>
         </div>
-        <h1 class="main__text main__none" id="main__clients">клиенты</h1>
-        <h1 class="main__text main__none" id="main__map">карта</h1>
+        <div class="main__text main__none" id="main__clients">
+            <div>
+                <p id="table__info"></p>
+            </div>
+            <table>
+                <thead>
+                    <tr class="table__head">
+                        <td>Имя</td>
+                        <td>Компания</td>
+                        <td>Email</td>
+                        <td>Телефон</td>
+                        <td>Баланс</td>
+                        <td>Дата регистрации</td>
+                        <td>Удалить</td>
+                    </tr>
+                </thead>
+                <tbody id="table__body">
+                </tbody>
+            </table>
+
+            <button type="button" id="back__btn">Вернуться к началу</button>
+
+            <div class="notification">
+                <input id="close__btn" type="button" value=" x ">
+                <div class="notification__body">Данные успешно удалены</div>
+              </div>
+        </div>
+
+        <div class="main__none" id="main__map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d150505.6360293842!2d27.59336845!3d53.88464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcfd35b1e6ad3%3A0xb61b853ddb570d9!2z0JzQuNC90YHQug!5e0!3m2!1sru!2sby!4v1653856222756!5m2!1sru!2sby" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            </map>
+        </div>
     </div>
 
 <script src="./main.js"></script>
